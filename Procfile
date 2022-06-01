@@ -1,1 +1,1 @@
-worker: npm i -g && start index.js
+worker: npm i && start index.js
