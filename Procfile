@@ -1,1 +1,1 @@
-worker: npm i && start index.js
+worker: yarn install && node index.js
