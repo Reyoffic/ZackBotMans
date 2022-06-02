@@ -2707,8 +2707,8 @@ await mans.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Suk
 await mans.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`Sukses Membuka Group`)).catch((err) => m.reply(jsonformat(err)))
 } else {
 let buttons = [
-{ buttonId: 'gc bangun', buttonText: { displayText: 'bangun' }, type: 1 },
-{ buttonId: 'gc turudek', buttonText: { displayText: 'turudek' }, type: 1 }
+{ buttonId: 'group buka', buttonText: { displayText: 'bangun' }, type: 1 },
+{ buttonId: 'group tutup', buttonText: { displayText: 'turudek' }, type: 1 }
 ]
 let buttonMessage = {
 image: log0,
