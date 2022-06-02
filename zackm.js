@@ -2696,7 +2696,7 @@ mans.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break
-case 'group': case 'grup': {
+case 'group': case 'gc': {
 if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
@@ -2707,8 +2707,8 @@ await mans.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Suk
 await mans.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`Sukses Membuka Group`)).catch((err) => m.reply(jsonformat(err)))
 } else {
 let buttons = [
-{ buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
-{ buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
+{ buttonId: 'gc bangun', buttonText: { displayText: 'bangun' }, type: 1 },
+{ buttonId: 'gc turudek', buttonText: { displayText: 'turudek' }, type: 1 }
 ]
 let buttonMessage = {
 image: log0,
@@ -2740,7 +2740,7 @@ let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender :
 await mans.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 }
 break
-case 'kick': {
+case 'mati': {
 if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
@@ -2749,7 +2749,7 @@ let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender :
 await mans.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 }
 break
-case 'add': {
+case 'hidup': {
 if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
