@@ -2696,19 +2696,19 @@ mans.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break
-case 'group': case 'gc': {
+case 'gc': case 'grup': {
 if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return m.reply(mess.admin)
-if (args[0] === 'close'){
+if (args[0] === 'turu'){
 await mans.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Sukses Menutup Group`)).catch((err) => m.reply(jsonformat(err)))
-} else if (args[0] === 'open'){
+} else if (args[0] === 'bangun'){
 await mans.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`Sukses Membuka Group`)).catch((err) => m.reply(jsonformat(err)))
 } else {
 let buttons = [
-{ buttonId: 'group buka', buttonText: { displayText: 'bangun' }, type: 1 },
-{ buttonId: 'group tutup', buttonText: { displayText: 'turudek' }, type: 1 }
+{ buttonId: 'group open', buttonText: { displayText: 'bangun' }, type: 1 },
+{ buttonId: 'group close', buttonText: { displayText: 'turudek' }, type: 1 }
 ]
 let buttonMessage = {
 image: log0,
@@ -3695,7 +3695,7 @@ let buttons = [
 let buttonMessage = {
 video: {url:res.wm},
 caption: twks,
-footer: "© MyMans APIs - MyMainas",
+footer: "® KoKoRey",
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
