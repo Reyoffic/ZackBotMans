@@ -2701,14 +2701,14 @@ if (isBan) return m.reply(mess.ban)
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return m.reply(mess.admin)
-if (args[0] === 'turu'){
+if (args[0] === 'close'){
 await mans.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Sukses Menutup Group`)).catch((err) => m.reply(jsonformat(err)))
-} else if (args[0] === 'bangun'){
+} else if (args[0] === 'open'){
 await mans.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`Sukses Membuka Group`)).catch((err) => m.reply(jsonformat(err)))
 } else {
 let buttons = [
-{ buttonId: 'group open', buttonText: { displayText: 'bangun' }, type: 1 },
-{ buttonId: 'group close', buttonText: { displayText: 'turudek' }, type: 1 }
+{ buttonId: 'group open', buttonText: { displayText: 'Bangun' }, type: 1 },
+{ buttonId: 'group close', buttonText: { displayText: 'Turu' }, type: 1 }
 ]
 let buttonMessage = {
 image: log0,
